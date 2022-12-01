@@ -13,18 +13,6 @@ twoD = casenode["/DOM_1/2D_Results"]
 outflow_node = casenode["/DOM_1/2D_Results/Total Outlet Massflow"]
 outflow_node.values
 
-#3rd page: Task
-inflow = casenode["/DOM_1/2D_Results/Total Inlet Massflow"]
-outflow = casenode["/DOM_1/2D_Results/Total Outlet Massflow"]
-outflow = casenode["/DOM_1/2D_Results/Total Outlet Massflow"]
-inflow = np.asarray(inflow.values[1])
-outflow = np.asarray(outflow.values[1])
-balance = inflow - outflow
-np.max(balance)
-np.min(balance)
-
-
-
 #4th page
 import os
 projectname = os.path.splitext(os.path.basename(project.filename))[0]
