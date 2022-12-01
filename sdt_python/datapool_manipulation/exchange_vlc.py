@@ -118,30 +118,6 @@ if __name__ == '__main__':
     print("Save project...")
     project.save(proj_file)
     print("Save project... finished")
-    """    
-    
-    for model in project.models:
-        if not hasattr(model, "jobs"):
-            continue
-        for case_set in project.cases.case_sets:
-            for case in case_set.cases:
-                model.jobs.settings.add_case(case)
-
-        model.jobs.settings.computing_resources.manual.select()
-        model.jobs.settings.computing_resources.manual.use_server = False
-        my_run = model.jobs.run()
-
-    with open(".preped", "w") as f_p:
-        if sys.platform == "win32":
-            time_str = str(datetime.datetime.now().strftime("%H%M%S%d%m%Y"))
-        else:
-            time_str = str(datetime.datetime.now().strftime("%H%M%S%::%d%m%Y"))
-        f_p.write(str(os.getpid()) + "  " + time_str)
-    # except Exception as e:
-    #    print("Crash during prep, with exception:\n" + str(e))
-    #    traceback.print_tb(e.__traceback__)
-    # os.chdir(starting_dir)
-    print("API Prep Script done.")"""
     if sys.platform != "win32":
         fcntl.flock(fd, fcntl.LOCK_UN)
         fd.close()

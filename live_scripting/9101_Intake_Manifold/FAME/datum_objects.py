@@ -10,3 +10,6 @@ cone.origin = (0,0,0.1)
 cone.origin = ((0,0,0.1), "in")
 fame.datum_objects[0]
 fame.datum_objects['point']
+
+sdt.core.list_unit_groups()
+sdt.core.list_units('length')
